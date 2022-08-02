@@ -17,3 +17,10 @@ jobs:
           heroku_email: ${{secrets.HEROKU_EMAIL}} #Your Heroku Login Email
           remote_branch: master # <- Include this:
           stack: "heroku-20"
+      - uses: akhileshns/heroku-deploy@v3.12.12 #This is the action
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: ${{secrets.HEROKU_APP_NAME_2}} #Heroku App Name that will be pushed out
+          heroku_email: ${{secrets.HEROKU_EMAIL}} #Your Heroku Login Email
+          remote_branch: master # <- Include this:
+          stack: "heroku-20"
