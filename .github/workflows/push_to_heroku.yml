@@ -28,3 +28,11 @@ jobs:
           heroku_email: ${{secrets.HEROKU_EMAIL}} #Your Heroku Login Email
           remote_branch: master # <- Include this:
           stack: "heroku-20"
+      - name: Ping URL
+        uses: nerdify/ping-action@1.0.0
+        env:
+          PING_URL: https://${{secrets.HEROKU_APP_NAME}}.herokuapp.com/
+      - name: Ping URL 2
+        uses: nerdify/ping-action@1.0.0
+        env:
+          PING_URL: https://${{secrets.HEROKU_APP_NAME_2}}.herokuapp.com/
